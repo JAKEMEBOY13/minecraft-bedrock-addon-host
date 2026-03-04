@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Bedrock Add-on Host</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1>🎮 Bedrock Add-on Host</h1>
+      <nav>
+        <a href="#upload">Upload</a>
+        <a href="#guide">Xbox Guide</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Host & Share Minecraft Bedrock Add-ons</h2>
+        <p>Upload your add-ons, we validate & package them. Download as <code>.mcpack</code> for Xbox.</p>
+      </div>
+    </section>
+
+    <section id="upload" class="upload-section">
+      <div class="container">
+        <h2>Upload Your Add-on</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="addonFile">Add-on ZIP File:</label>
+            <input type="file" id="addonFile" name="addon" accept=".zip" required>
+            <small>Max 500MB. Must be valid Bedrock structure with manifest.json</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Pack Name:</label>
+              <input type="text" id="name" name="name" placeholder="My Cool Addon" required>
+            </div>
+            <div class="form-group">
+              <label for="creator">Creator Name:</label>
+              <input type="text" id="creator" name="creator" placeholder="Your Name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="What does your add-on do?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="version">Version:</label>
+            <input type="text" id="version" name="version" placeholder="1.0.0" value="1.0.0">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Upload & Validate</button>
+        </form>
+
+        <div id="uploadStatus" class="status-box" style="display: none;"></div>
+      </div>
+    </section>
+
+    <section id="results" class="results-section" style="display: none;">
+      <div class="container">
+        <h2>✅ Validation Successful!</h2>
+        
+        <div class="validation-details">
+          <h3>Add-on Information:</h3>
+          <div id="detailsContent"></div>
+        </div>
+
+        <div class="download-section">
+          <h3>Download Your Package:</h3>
+          <a id="downloadMcpack" class="btn btn-success" download>📦 Download .mcpack</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide" class="guide-section">
+      <div class="container">
+        <h2>How to Import on Xbox</h2>
+        <ol>
+          <li><strong>Download the .mcpack file</strong> from this site to your device</li>
+          <li><strong>Open Minecraft Bedrock Edition</strong> on your Xbox</li>
+          <li>Go to <strong>"Create"</strong> → <strong>"My Packs"</strong></li>
+          <li>Select <strong>"Import"</strong> or <strong>"Browse"</strong></li>
+          <li>Locate the <code>.mcpack</code> file you downloaded</li>
+          <li>Select it to import automatically</li>
+          <li>Create a new world and enable your add-on in <strong>"Behavior Packs"</strong> & <strong>"Resource Packs"</strong></li>
+        </ol>
+
+        <div class="info-box">
+          <h4>💡 Alternative: Cloud Sync Method</h4>
+          <p>If direct import doesn't work:</p>
+          <ol>
+            <li>Download the <code>.mcpack</code> to a cloud storage (OneDrive, Google Drive)</li>
+            <li>On Xbox, open Edge browser and download the file</li>
+            <li>The file saves to <strong>Downloads</strong>, then import via "My Packs"</li>
+          </ol>
+        </div>
+
+        <div class="info-box warning">
+          <h4>⚠️ Important: No File System Hacking</h4>
+          <p>This platform does NOT support or encourage:</p>
+          <ul>
+            <li>Direct modification of Xbox storage files</li>
+            <li>Jailbreaking or system file access</li>
+            <li>Circumventing Minecraft's built-in security</li>
+          </ul>
+          <p>All add-ons are imported cleanly via Minecraft's official "My Packs" interface.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About This Platform</h2>
+        <p>
+          <strong>Bedrock Add-on Host</strong> is a community tool for safely sharing Minecraft Bedrock Edition add-ons with Xbox players.
+        </p>
+        <ul>
+          <li>✅ Automatic validation of add-on structure</li>
+          <li>🔒 Malware scanning on all uploads</li>
+          <li>📦 Automatic .mcpack packaging</li>
+          <li>♿ Works on all devices (PC, mobile, console)</li>
+          <li>🚫 No sketchy file system access required</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Minecraft Bedrock Add-on Host. Not affiliated with Microsoft or Mojang Studios.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
